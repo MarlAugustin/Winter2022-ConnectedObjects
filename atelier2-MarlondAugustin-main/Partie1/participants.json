@@ -1,0 +1,70 @@
+[
+    {
+        "listeReponses": [
+            "Raspberry Pi",
+            "C++",
+            "Android Studio",
+            "#",
+            "strip",
+            "len('bonjour')",
+            "majuscule=('bonjour').upper()",
+            "minuscule=('BONSOIR').lower()",
+            "isNum=isnumeric('32')",
+            "Github"
+        ],
+        "nb_bonnesrep": 7,
+        "nomParticipant": "Marlond Augustin",
+        "pointage": 14
+    },
+    {
+        "listeReponses": [
+            "Raspberry Pi",
+            "Python",
+            "Visual Studio Code",
+            "#",
+            "strip",
+            "len('bonjour')",
+            "majuscule=('bonjour').upper()",
+            "minuscule=('BONSOIR').lower()",
+            "isNum=('32').isnumeric()",
+            "Github"
+        ],
+        "nb_bonnesrep": 10,
+        "nomParticipant": "Maurice Richard",
+        "pointage": 20
+    },
+    {
+        "listeReponses": [
+            "Arduino",
+            "Java",
+            "Eclipse",
+            "*",
+            "replace",
+            "bonjour.length()",
+            "majuscule=('bonjour').upper()",
+            "minuscule=lower('BONSOIR')",
+            "isNum=isnumeric('32')",
+            "Moodle"
+        ],
+        "nb_bonnesrep": 1,
+        "nomParticipant": "Scooby-Doo",
+        "pointage": 2
+    },
+    {
+        "listeReponses": [
+            "Raspberry Pi",
+            "C++",
+            "Visual Studio Code",
+            "#",
+            "strip",
+            "len('bonjour')",
+            "majuscule=('bonjour').upper()",
+            "minuscule=('BONSOIR').lower()",
+            "isNum=('32').isnumeric()",
+            "Github"
+        ],
+        "nb_bonnesrep": 9,
+        "nomParticipant": "Marlond",
+        "pointage": 18
+    }
+]

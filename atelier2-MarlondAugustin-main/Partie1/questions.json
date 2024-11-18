@@ -1,0 +1,83 @@
+[
+    {
+        "q":"Pour utiliser les objets connectés, on va utiliser lequel des nano-ordinateurs?",
+        "a":"Raspberry Pi",
+        "b":"Arduino",
+        "c":"Banana Pi",
+        "rep":"a",
+        "pts":2
+    },
+    {
+        "q":"Dans le cours, on va utiliser quel langage de programmation?",
+        "a":"Java",
+        "b":"C++",
+        "c":"Python",
+        "rep":"c",
+        "pts":2
+    },
+    {
+        "q":"Quelle environnement de développement on utilise dans le cours?",
+        "a":"Visual Studio Code",
+        "b":"Eclipse",
+        "c":"Android Studio",
+        "rep":"a",
+        "pts":2
+    },
+    {
+        "q":"Dans Python, pour mettre un commentaire, on utilise le symbole suivant:",
+        "a":"@",
+        "b":"#",
+        "c":"*",
+        "rep":"b",
+        "pts":2
+    },
+    {
+        "q":"Quelle méthode doit être utilisée pour enlever les espaces au dédut et à la fin",
+        "a":"replace",
+        "b":"split",
+        "c":"strip",
+        "rep":"c",
+        "pts":2
+    },
+    {
+        "q":"Quelle méthode doit être utilisée pour trouver la longueur de la chaine bonjour",
+        "a":"len('bonjour')",
+        "b":"bonjour.len()",
+        "c":"bonjour.length()",
+        "rep":"a",
+        "pts":2
+    },
+    {
+        "q":"Quelle méthode doit être utilisée pour transformer toutes les caractères de la chaine bonjour en majuscule",
+        "a":"majuscule=upper('bonjour')",
+        "b":"majuscule=('bonjour').upper()",
+        "c":"majuscule=('bonjour').upp()",
+        "rep":"b",
+        "pts":2
+    },
+    {
+        "q":"Quelle méthode doit être utilisée pour transformer toutes les caractères de la chaine BONSOIR en minuscule",
+        "a":"minuscule=lower('BONSOIR')",
+        "b":"minuscule=('BONSOIR').low()",
+        "c":"minuscule=('BONSOIR').lower()",
+        "rep":"c",
+        "pts":2
+    },
+    {
+        "q":"Quelle méthode doit être utilisée savoir si une chaîne de charactère contient seulement des chiffres",
+        "a":"isNum=('32').isnumeric()",
+        "b":"isNum=(32).isnumeric()",
+        "c":"isNum=isnumeric('32')",
+        "rep":"a",
+        "pts":2
+    },
+    {
+        "q":"Quelle outils allons-nous utiliser pour sauvegarder la progression de nos ateliers et tp",
+        "a":"Microsoft teams",
+        "b":"Moodle",
+        "c":"Github",
+        "rep":"c",
+        "pts":2
+    }
+    
+    ]

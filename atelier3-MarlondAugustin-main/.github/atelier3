@@ -1,0 +1,115 @@
+from gpiozero import LED
+from time import sleep
+from gpiozero import Button
+import random
+#variables
+led=  LED(18)
+buttonJoueur1= Button(6)
+buttonJoueur2= Button(21)
+tempsAleatoire=0
+nomJoueur1=""
+nomJoueur2=""
+nbPointJoueur1=0
+nbPointJoueur2=0
+nbManche=0
+mancheActuelle=0
+autrePartie='o'
+#méthode pour dire le vainceur
+def vainceur(nomVainceur,nbPointVainceur):
+    #la variable vainceur vas contenir le nom de l'usager qui a pressé en premier
+    #affiche le vainceur de la manche et on montre les points
+    print(nomVainceur," a gagné la manche ",(mancheActuelle+1),"!","\n")
+    print("Résultats après la manche ",(mancheActuelle+1)," ...","\n")
+    if(nomVainceur==nomJoueur1):
+        global nbPointJoueur1
+        nbPointVainceur+=1
+        nbPointJoueur1=nbPointVainceur
+    else:
+        global nbPointJoueur2
+        nbPointVainceur+=1
+        nbPointJoueur2=nbPointVainceur
+    print(nomJoueur1,": ",nbPointJoueur1)
+    print(nomJoueur2,": ",nbPointJoueur2,"\n")
+def gagnant():
+    #on affiche le gagnant de la partie
+    global nbPointJoueur1
+    global nbPointJoueur2
+    global nomJoueur2
+    global nomJoueur2    
+    if(nbPointJoueur1>nbPointJoueur2):
+        print("Le gagnant est ",nomJoueur1)
+    elif(nbPointJoueur1<nbPointJoueur2):
+        print("Le gagnant est ",nomJoueur2)
+    else:
+        print("Le match est nul. Il n'y a pas de gagnant")
+
+#Il faut tester les cas où les usagers cliquent en même temps
+while autrePartie=='o':
+    nbPointJoueur1=0
+    nbPointJoueur2=0
+    print('============================')
+    print('       JEU DE RÉFLEXE        ')
+    print('============================')
+    
+    nomJoueur1=input('Nom du joueur 1: ')
+    if(nomJoueur1.__contains__(" ")):
+        #Si le nom du joueur 1 contient un espace on le force à réecrire tant que le format n'est pas correct
+        while(nomJoueur1.__contains__(" ")):
+            print("Votre nom ne doit pas contenir d'espace")
+            nomJoueur1=input('Nom du joueur 1: ')
+
+    nomJoueur2=input('Nom du joueur 2: ')
+    if(nomJoueur2.__contains__(" ")):
+        #Si le nom du joueur 2 contient un espace on le force à réecrire tant que le format n'est pas correct
+        while(nomJoueur2.__contains__(" ")):
+            print("Votre nom ne doit pas contenir d'espace")
+            nomJoueur2=input('Nom du joueur 2: ')
+
+    valide=False
+    while valide==False:
+        #lorsque l'usager écrit une valeur différente de 1 à 5, on affiche un message d'erreur et il est forcé de respecter le format voulue
+        #lorsque le nombre de manches est inclut entre 1 et 5 le programme devient valide et on continue
+        try:
+            nbManche=int(input('Entrez le nombre de manches (entre 1 et 5): '))
+            if(nbManche<1 or nbManche>5):
+                raise Exception
+        except:
+            print('Vous avez écrit une valeur différente de 1 à 5')
+        else:
+            valide=True
+
+    print('----------------------------------------')
+    print('DÉBUT DE LA PARTIE                      ')
+    while mancheActuelle<nbManche:
+        #C'est un on allume la led selon un temps aléatoire de 1 à 10 secondes 
+        #la raison pour laquelle j'ai mis un deuxième sleep d'une seconde c'est qu'il faut tenir le bouton pendant cette durée 
+        #pour que la méthode is_pressed se déclenche
+        print('----------------------------------------')    
+        print("C'est un départ pour la manche ", (mancheActuelle+1),"..."+"\n")
+        tempsAleatoire=random.randint(5,10)
+        sleep(tempsAleatoire)
+        led.on()
+        sleep(1)
+        if buttonJoueur1.is_pressed:
+            vainceur(nomJoueur1,nbPointJoueur1)
+        elif buttonJoueur2.is_pressed:
+            vainceur(nomJoueur2,nbPointJoueur2)
+        else:
+            print("Pas de gagnant pour la manche ",(mancheActuelle+1))
+        led.off()
+        mancheActuelle+=1
+    gagnant()
+    print("----------------------------------------")
+    autrePartie=input("Une autre partie (O/N) : ")
+    reponseUsager=autrePartie.lower()
+    while reponseUsager!='o'and reponseUsager!='n':
+        #On s'assure que la réponse soit oui ou non, tant que ça ne respecte pas la valeur souhaité, en majuscule ou minuscule
+        #on force l'usager d'inscrire une des valeur souhaités
+        print("La valeur que vous avez mis est différente (O/N): ")
+        reponseUsager=input("Une autre partie (O/N)")
+        reponseUsager=reponseUsager.lower()
+        if(reponseUsager=='o'or reponseUsager=='n'):
+            break
+    mancheActuelle=0
+    autrePartie=reponseUsager
+
